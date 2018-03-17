@@ -9,7 +9,7 @@ public class Item {
     /**
      * Item should not be created unless you have all of the elements, which is why you are forcing
      * it to be set in the constructor. In ItemParser, if you do not find all the elements of a Item,
-     * you should throw an Custom Exception.
+     * you should throw a Custom Exception.
      * @param name
      * @param price
      * @param type
@@ -23,7 +23,7 @@ public class Item {
     }
 
     public String getName() {
-        return name;
+        return null;
     }
 
 
