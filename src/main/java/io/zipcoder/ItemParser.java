@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 public class ItemParser {
 
-
     public ArrayList<String> parseRawDataIntoStringArray(String rawData){
         String stringPattern = "##";
         ArrayList<String> response = splitStringWithRegexPattern(stringPattern , rawData);
@@ -28,7 +27,7 @@ public class ItemParser {
         String expiration;
         Item item = null;
 
-        Matcher m = Pattern.compile(":([^,].*?)(;|##|\\^|!|%|\\*|@)").matcher(rawItem);
+        Matcher m = Pattern.compile(":([^,].+?)(\\W|;|\\^|!|%|\\*|@)").matcher(rawItem);
 
         int numberOfMatches = countMatches(m);
         final int REQUIRED_NUMBER_OF_FIELDS_FOR_ITEM = 4;

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class Main {
 
+    static ItemList itemList = new ItemList();
+
     public ArrayList<String> readRawDataToString() throws Exception {
         ClassLoader classLoader = getClass().getClassLoader();
         String result = IOUtils.toString(classLoader.getResourceAsStream("RawData.txt"));
@@ -19,10 +21,10 @@ public class Main {
     public static void main(String[] args) throws Exception {
         ArrayList<String> output = (new Main()).readRawDataToString();
         ItemParser itemParser = new ItemParser();
-        ArrayList<String> lastArray = itemParser.findKeyValuePairsInRawItemData(output.toString());
-        for (String s : lastArray) {
+        for (String s : output) {
             try{
-            Item item = itemParser.parseStringIntoItem(s);
+            itemParser.parseStringIntoItem(s);
+
 
             } catch (ItemParseException e) {
                     continue;

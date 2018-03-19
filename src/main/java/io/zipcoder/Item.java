@@ -1,10 +1,13 @@
 package io.zipcoder;
 
+import java.util.ArrayList;
+
 public class Item {
     private String name;
     private Double price;
     private String type;
     private String expiration;
+
 
     /**
      * Item should not be created unless you have all of the elements, which is why you are forcing
@@ -45,4 +48,5 @@ public class Item {
     public String toString(){
         return "name:" + name + " price:" + price + " type:" + type + " expiration:" + expiration;
     }
+
 }
