@@ -28,7 +28,7 @@ public class ItemParser {
         String expiration;
         Item item = null;
 
-        Matcher m = Pattern.compile(":([^,].*?)(,|##|\\^|!|%|\\*|@)").matcher(rawItem);
+        Matcher m = Pattern.compile(":([^,].*?)(;|##|\\^|!|%|\\*|@)").matcher(rawItem);
 
         int numberOfMatches = countMatches(m);
         final int REQUIRED_NUMBER_OF_FIELDS_FOR_ITEM = 4;
